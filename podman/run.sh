@@ -23,6 +23,24 @@ windows() {
     return 1
 }
 
+selinux() {
+    if which sestatus > /dev/null
+    then
+	if sestatus | grep -q enabled
+	then
+	    return 0
+	fi
+    fi
+    return 1
+}
+
+optZ() {
+    if selinux
+    then
+	echo -n ":Z"
+    fi
+}
+
 winenv() {
   if windows
     then
@@ -73,7 +91,7 @@ echo "podman run '$PODMAN_TAG' (mounting host '$HOST_DIR' as '$GUEST_DIR'): " "$
 if [ $# -gt 0 ]
 then
     winenv podman run -it --rm \
-	   -v "$HOST_DIR:$GUEST_DIR" \
+	   -v "$HOST_DIR:$GUEST_DIR$(optZ)" \
      -h ubuntu \
      -p 8080:8080 \
 	   "$PODMAN_TAG" \
@@ -81,7 +99,7 @@ then
 else
     echo "Type CTRL-D or exit to exit the interactive shell"
     winenv podman run -it --rm \
-	   -v "$HOST_DIR:$GUEST_DIR" \
+	   -v "$HOST_DIR:$GUEST_DIR$(optZ)" \
      -h ubuntu \
      -p 8080:8080 \
 	   "$PODMAN_TAG" \
