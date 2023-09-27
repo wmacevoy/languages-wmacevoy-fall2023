@@ -1,0 +1,61 @@
+Q. What are the main models of computation (there are 3) in practial use today?
+
+1. VonNeumann machine - this is most computation today.  (Harvard is very similar)
+2. Neural Network
+3. Quantum Machine - Probabilistic Computation
+
+Q. What are main categories of programming paradigms?
+
+1. Procedural.
+2. Functional.
+3. Logic/Constraint.
+4. Object-Oriented.
+
+Q. Some languages are general purpose (like C++) others (Ocaml, gradle, prolog) are
+purests and only adhere to one type above.  Why would you want to be restricted, like
+functional-only languages?
+
+With a restriction, there is less to think about in the entire design of the program.
+For example, global state creates hard to understand, debug and test solutions.
+Functional design does not allow this, so you and your other developers don't have to
+wonder if that is going on in your code.
+
+Procedural languages tend to be over-prescriptive.  The less you this, the more the
+compiler can do the work better than the prescriptive version.
+
+Q. What is the difference between a functional design and the use of functions
+(like in C++)?
+
+Functions in C++ can contain procedural code, which is not a functional design.
+
+If you restrict the content of those functions, so they do not modify state or use
+global state, then you building someting using using functional design.
+
+Q. When is procedural design a good idea?
+
+When the compiler or machine is stressed out.  If stakes are high, and you want
+one clear way to do something, then spell it out.
+
+When a functional design wastes a lot of space making large objects that are very
+similar, it is more efficient to modify the objects.
+
+Q. Why should objects allow private methods?
+
+Complex objects need to keep internals internal.  This makes them more likely to
+work correctly when used, and simplifies understanding how to use them.  This is
+also an important security feature of a language.
+
+Q. What are some examples of logic/constraint languages that are not "pure" like prolog?
+
+SQL is a data-constraint language.
+DTD is a schema language to restrict the shape of XML documents.
+Most useful user-interface languages are constraints languages (HTML, CSS).
+LINQ in C#/.NET is a data query language.
+OpenMP in C++ is a parallelization language.
+Makefiles
+Gradle
+
+Q. Why are UI languages constraint languages?
+
+UI is mostly rectangle layout; but the constraints are too varied to solve any other way:
+fonts, languages, screen size, resolution, text flow.  Etc.
