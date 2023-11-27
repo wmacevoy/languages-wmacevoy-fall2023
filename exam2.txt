@@ -1,0 +1,16 @@
+Regular expressions
+Context-Free Grammar
+
+Scanner (UTF-8)
+Tokens
+Parse tree
+Recursive Descent vs Shift-Reduce Parser
+
+Pass by value, Pass by reference
+Lambdas and await / async
+Garbage Collection
+HTML dom/CSS selectors
+SQL injection
+Libraries, Versions, and Security
+Reflection
+Blockchain
