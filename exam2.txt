@@ -1,16 +1,53 @@
 Regular expressions
-Context-Free Grammar
+  Practial: Libraries in all languages for this.
+  Q: Describe the set of strings that some RE matches: a+b*
+Context-Free Grammar -> EBNF form
+  Practical: Exact def of a language; used by compiler designers.
+  Q: Make a parse tree for some grammar and token sequence.
+  Q: What is the difference between a terminal and non-terminal in a grammar?
 
-Scanner (UTF-8)
-Tokens
-Parse tree
-Recursive Descent vs Shift-Reduce Parser
+Structure of a Compiler
+  Scanner (UTF-8): Bytes -> UTF-8 -> Characters -> RegEx -> Tokens
+    Tokens: Are the terminals of the languages.
+    Tokens: often defined using regular expressions.
+    Q: What is the purpose of UTF-8?
+    
+  Parser: Seqence of Tokens -> Parser -> Parse tree
+    The grammar of the language defines the parse tree.
+    Recursive Descent vs Shift-Reduce Parser
+    Problems with Left & Right recursion in the grammar.
+  Once you have the parse tree, then the back-end is application
+  specific.
+    Q: What's the difference between Recursive Descent and Shift Reduce Parsers?
 
-Pass by value, Pass by reference
+Q: Why do many compilers build to some intermediate language instead of
+a specific machine language?
+
+Pass by value, Pass by reference, and Everything is an Object
+structure of common languages today.
+Q: Describe the output of a small C/C++ snippet.
+Q: In an EEO language like Javascript, what values are passed?
+Why are const values not really constant in these languages?
+
 Lambdas and await / async
-Garbage Collection
-HTML dom/CSS selectors
+Q: Why are lambdas useful?
+Q: Convert a snippet of JS lambdas <=> await / async.
+
+Garbage Collection (why and why not)
+HTML DOM/CSS selectors and properties
+Q: What is the DOM.  How do selectors work?  Interpret a small snippet of 
+HTML/CSS
 SQL injection
+Q: What's the problem.  How do you fix it?
+
 Libraries, Versions, and Security
+Q: Why use libraries, what are good policies for versioning of libraries,
+what security problems show up in modern software development from the
+use (and not use) of libraries.
+
 Reflection
+Q: Why not have reflection?  Why is it useful?
 Blockchain
+Q: What is the main problem that blockchains address?
+Q: Why are transactions on blockchains programs instead of simple double-book
+entries?
